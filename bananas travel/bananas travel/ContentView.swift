@@ -10,32 +10,50 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         
-        VStack{
-            Text("acabate viagens")
-                .foregroundColor(Color.white)
-                .font(.custom("Avenir Black", size: 20 ))
-            Text("ESPECIAL")
-                .foregroundColor(Color.white)
-                .font(.custom("Avenir Book", size: 20))
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading )
-                .padding(.leading, 30)
-                
-            Text("BRASIL")
-                .foregroundColor(Color.white)
-                .font(.custom("Avenir Black", size: 23))
-                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading )
-                .padding(.leading, 30)
-
+        GeometryReader { view in
+            // MARK: - VStack principal
             
-            List(){
-                Text("Rio de Janeiro")
-                Text("Manaus")
-                Text("Recife")
-                Text("Pernambuco")
+            VStack{
+                
+                // MARK: - VStack header
+                
+                VStack{
+                    Text("acabate viagens")
+                        .foregroundColor(Color.white)
+                        .font(.custom("Avenir Black", size: 20 ))
+                        .padding(.top, 50)
+                    Text(" ESPECIAL")
+                        .foregroundColor(Color.white)
+                        .font(.custom("Avenir Book", size: 20))
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading )
+                        .padding(.leading, 30)
+                        
+                    Text("BRASIL")
+                        .foregroundColor(Color.white)
+                        .font(.custom("Avenir Black", size: 23))
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading )
+                        .padding(.leading, 30)
+
                     
+                  
+                }
+                .frame(width: view.size.width, height: 180, alignment: .top)
+                .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.green.opacity(0.7)]), startPoint: .top, endPoint: .bottom))
+                .edgesIgnoringSafeArea(.all)
+                
+                
+                List(){
+                    Text("Rio de Janeiro")
+                    Text("Manaus")
+                    Text("Recife")
+                    Text("Pernambuco")
+                        
+                }
             }
+            
+         
         }
-        .background(LinearGradient(gradient: Gradient(colors: [Color.green, Color.blue.opacity(0.5)]), startPoint: .top, endPoint: .bottom))
+      
     }
 }
 

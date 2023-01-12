@@ -1,2 +1,2 @@
 # bananas-travel
-Aplicaçoes de viagens chamado Bananas Travel
+Aplicaçoes de viagens chamada bananas Travel 
